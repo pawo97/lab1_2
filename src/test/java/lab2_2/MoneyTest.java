@@ -48,4 +48,13 @@ public class MoneyTest {
         Money subtractValue = money.subtract(new Money(3, Currency.getInstance("USD")));
         Money endValue = new Money(97, Currency.getInstance("EUR"));
     }
+
+    @Test
+    public void determineCurrencyCodeTest() {
+        Money usdMoney = new Money(100, Currency.getInstance("USD"));
+        String code = "USD";
+        assertThat(usdMoney.getCurrencyCode()
+                           .equals(code),
+                is(true));
+    }
 }
