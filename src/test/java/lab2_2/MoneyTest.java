@@ -41,4 +41,11 @@ public class MoneyTest {
         Money endValue = new Money(97);
         assertThat(subtractValue.equals(endValue), is(true));
     }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void isReturnedValuSubteactWithExcepiton() {
+        Money money = new Money(100, Currency.getInstance("EUR"));
+        Money subtractValue = money.subtract(new Money(3, Currency.getInstance("USD")));
+        Money endValue = new Money(97, Currency.getInstance("EUR"));
+    }
 }
