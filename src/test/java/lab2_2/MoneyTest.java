@@ -66,4 +66,12 @@ public class MoneyTest {
                            .equals(code),
                 is(true));
     }
+
+    @Test
+    public void greaterThanTestFalse() {
+        Money money1 = new Money(100);
+        Money money2 = new Money(130);
+        boolean outcome = money1.greaterThan(money2);
+        assertThat(outcome, is(false));
+    }
 }
