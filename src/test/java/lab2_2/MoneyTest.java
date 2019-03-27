@@ -74,4 +74,12 @@ public class MoneyTest {
         boolean outcome = money1.greaterThan(money2);
         assertThat(outcome, is(false));
     }
+
+    @Test
+    public void greaterThanTestTrue() {
+        Money money1 = new Money(190);
+        Money money2 = new Money(100);
+        boolean outcome = money1.greaterThan(money2);
+        assertThat(outcome, is(true));
+    }
 }
