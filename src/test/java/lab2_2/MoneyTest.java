@@ -34,4 +34,11 @@ public class MoneyTest {
         Money endValue = new Money(103, Currency.getInstance("EUR"));
     }
 
+    @Test
+    public void isReturnedValuSubtract() {
+        Money money = new Money(100);
+        Money subtractValue = money.subtract(new Money(3));
+        Money endValue = new Money(97);
+        assertThat(subtractValue.equals(endValue), is(true));
+    }
 }
