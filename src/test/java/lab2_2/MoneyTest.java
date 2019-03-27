@@ -50,10 +50,19 @@ public class MoneyTest {
     }
 
     @Test
-    public void determineCurrencyCodeTest() {
+    public void determineCurrencyCodeTestForString() {
         Money usdMoney = new Money(100, Currency.getInstance("USD"));
         String code = "USD";
         assertThat(usdMoney.getCurrencyCode()
+                           .equals(code),
+                is(true));
+    }
+
+    @Test
+    public void determineCurrencyCodeTestFroCurrency() {
+        Money usdMoney = new Money(1, Currency.getInstance("USD"));
+        Currency code = Currency.getInstance("USD");
+        assertThat(usdMoney.getCurrency()
                            .equals(code),
                 is(true));
     }
