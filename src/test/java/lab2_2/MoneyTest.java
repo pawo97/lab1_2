@@ -17,4 +17,12 @@ public class MoneyTest {
         assertThat(multipliedValue.equals(endValue), is(true));
     }
 
+    @Test
+    public void isReturnedValuAdded() {
+        Money money = new Money(100);
+        Money addValue = money.add(new Money(3));
+        Money endValue = new Money(103);
+        assertThat(addValue.equals(endValue), is(true));
+    }
+
 }
