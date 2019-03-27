@@ -114,4 +114,12 @@ public class MoneyTest {
         boolean outcome = money1.lessOrEquals(money2);
         assertThat(outcome, is(false));
     }
+
+    @Test
+    public void lessOrEqualsTestEqual() {
+        Money money1 = new Money(100);
+        Money money2 = new Money(100);
+        boolean outcome = money1.lessOrEquals(money2);
+        assertThat(outcome, is(true));
+    }
 }
